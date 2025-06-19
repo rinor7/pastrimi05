@@ -279,6 +279,27 @@
                     "preview_size": "medium"
                 },
                 {
+                    "key": "field_684eebc9d832a",
+                    "label": "Video",
+                    "name": "video_file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 1
+                },
+                {
                     "key": "field_684ee96a8c1cc",
                     "label": "Content",
                     "name": "line2",
@@ -345,27 +366,6 @@
                     "toolbar": "full",
                     "media_upload": 1,
                     "delay": 0
-                },
-                {
-                    "key": "field_684eebc9d832a",
-                    "label": "Youtube Link",
-                    "name": "youtube_link",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "https:\/\/www.youtube.com\/watch?v=_BIYxpHtstM",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
                 },
                 {
                     "key": "field_6850ffbdf9f9d",
@@ -553,5 +553,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750198393
+    "modified": 1750340748
 }

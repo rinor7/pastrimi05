@@ -211,6 +211,63 @@ var swiper = new Swiper(".swiperCard", {
   },
 });
 
+var swiper = new Swiper(".ourServicesSwiper", {
+  slidesPerView: 1.3,
+  spaceBetween: 15,
+  // autoHeight: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+    991.98: {
+      slidesPerView: 5,
+      spaceBetween: 16,
+    },
+  },
+});
+
+
+var swiper = new Swiper(".gallerySwiper", {
+  slidesPerView: 1.3,
+  spaceBetween: 15,
+  // autoHeight: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+    991.98: {
+      slidesPerView: 4,
+      spaceBetween: 16,
+    },
+  },
+});
+
 
 //Video Modal
 function openVideoModal() {

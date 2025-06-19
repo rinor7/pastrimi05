@@ -15,7 +15,8 @@
     .container {
         padding: 60px 0;
         @include md {
-            padding: 80px 0;
+            padding: 40px 0;
+            max-width: unset;
         }
     }
     .row {
@@ -28,13 +29,15 @@
             flex-direction: column;
         }
     }
-
+    .ourServicesSwiper {
+        padding: 0 16px;
+    }
     .box {
         z-index: 1;
-        @include min-md {
-            flex: 0 0 auto;
-            width: calc(16.66666667% + 35px);
-        }
+        // @include min-md {
+        //     flex: 0 0 auto;
+        //     width: calc(16.66666667% + 35px);
+        // }
         .box__wrap {
             background-color: white;
             border-radius: 20px;
@@ -59,7 +62,7 @@
                         object-fit: cover;
                         @include transition;
                         @include md {
-                            height: 200px;
+                            height: 170px;
                         }
                     }
                     &:hover {

@@ -6,11 +6,16 @@ $source_page_id = 312;
 $about_fields = get_field('block_about', $source_page_id);
 
 // Merr fushën disable_section për faqen aktuale
-$current_disable = get_field('block_about_disable_section'); // ose get_field('block_about')['disable_section']
+$current_disable = get_field('block_about_disable_section');
 
 if ($current_disable) {
     return; // mos shfaq section-in nëse e ka disable faqja aktuale
 }
+
+$video_file = $about_fields['video_file'] ?? null;
+$video_url = is_array($video_file) ? ($video_file['url'] ?? '') : '';
+$video_uptitle = $about_fields['video_uptitle'] ?? '';
+$video_title = $about_fields['video_title'] ?? '';
 ?>
 
 <section class="introduction" id="rreth-nesh">
@@ -20,41 +25,49 @@ if ($current_disable) {
       <div class="left col-lg-6">
         <div class="welcome-image-box clearfix">
           <div class="vid1">
-            <img class="mobile-version" src="<?php echo $about_fields['box1img']; ?>" alt="" loading="lazy">
+            <img class="mobile-version" src="<?php echo esc_url($about_fields['box1img']); ?>" alt="" loading="lazy">
           </div>
           <div class="vid2">
-            <img class="mobile-version" src="<?php echo $about_fields['box2img']; ?>" alt="" loading="lazy">
+            <img class="mobile-version" src="<?php echo esc_url($about_fields['box2img']); ?>" alt="" loading="lazy">
           </div>
           <div class="vid3">
-            <img class="mobile-version" src="<?php echo $about_fields['box3img']; ?>" alt="" loading="lazy">
+            <img class="mobile-version" src="<?php echo esc_url($about_fields['box3img']); ?>" alt="" loading="lazy">
           </div>
         </div>
       </div>
       <div class="right col-lg-6">
         <div class="line1">
-          <img class="mobile-version" src="<?php echo $about_fields['box4img']; ?>" alt="" loading="lazy">
-          <span><?php echo $about_fields['line1']; ?></span>
-        </div>
+          <img class="mobile-version" src="<?php echo esc_url($about_fields['box4img']); ?>" alt="" loading="lazy">
+          <span><?php echo wp_kses_post($about_fields['line1']); ?></span>
+          </div>
         <div class="line2">
-          <span><?php echo $about_fields['line2']; ?></span>
+          <span><?php echo wp_kses_post($about_fields['line2']); ?></span>
         </div>
         <div class="line3">
           <div class="video-holder-box">
             <div class="img-holder">
-              <img class="mobile-version" src="<?php echo $about_fields['box5img']; ?>" alt="" loading="lazy">
+              <img class="mobile-version" src="<?php echo esc_url($about_fields['box5img']); ?>" alt="" loading="lazy">
               <div class="icon-holder">
                 <div class="icon">
                   <div class="inner">
-                    <a class="html5lightbox" target="_blank" title="Fouens Video Gallery" href="<?php echo $about_fields['youtube_link']; ?>">
-                      <span><i class="fas fa-play"></i></span>
-                    </a>
+                  <?php if ($video_url): ?>
+                    <div class="icon-holder">
+                      <div class="icon">
+                        <div class="inner">
+                          <div class="html5lightbox" onclick="openVideoModal()" style="cursor:pointer;" title="Fouens Video Gallery">
+                            <span><i class="fas fa-play"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endif; ?>
                   </div>
                 </div>
               </div>
             </div>    
           </div>
           <div class="rightext">
-            <span><?php echo $about_fields['line3']; ?></span>
+            <span><?php echo wp_kses_post($about_fields['line3']); ?></span>
           </div>
         </div>
       </div>
@@ -64,16 +77,16 @@ if ($current_disable) {
       <div class="row">
         <div class="lefts col-lg-7">
           <div class="description">
-            <p><?php echo $about_fields['description']; ?></p>
+            <p><?php echo esc_html($about_fields['description']); ?></p>
           </div>
         </div>
         <div class="rights col-lg-5">
           <div class="swiper mySwiper swiperCard">
             <div class="swiper-wrapper">
               <?php 
-              if( !empty($about_fields['slider_images']) ):
+              if (!empty($about_fields['slider_images'])):
                 $count = 0;
-                foreach( $about_fields['slider_images'] as $row ):
+                foreach ($about_fields['slider_images'] as $row):
                   if ($count >= 10) break;
                   $image = $row['image'];
                   if ($image):
@@ -88,12 +101,35 @@ if ($current_disable) {
                   $count++;
                 endforeach;
               endif;              
-                ?>
-              </div>
+              ?>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    <?php endif; ?>
 
-      <?php endif; ?>
+    <?php if ($video_url): ?>
+      <!-- Video Modal -->
+      <div id="videoModal-about" class="video-modal" style="display:none;">
+        <div class="video-modal-overlay" onclick="closeVideoModal('about')"></div>
+        <div class="video-modal-content">
+          <span class="video-modal-close" onclick="closeVideoModal('about')">&times;</span>
+          <video controls autoplay id="modalVideo-about">
+            <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="section-header-custom">
+            <?php if (!empty($video_uptitle)): ?>
+              <div class="section-header-custom-title"><?php echo esc_html($video_uptitle); ?></div>
+            <?php endif; ?>
+            <?php if (!empty($video_title)): ?>
+              <div class="section-header-custom-subtitle"><?php echo esc_html($video_title); ?></div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+
+    <?php endif; ?>
+    
   </div>
 </section>
