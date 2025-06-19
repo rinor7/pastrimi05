@@ -186,6 +186,7 @@
                 -o-object-fit: cover;
                 object-fit: cover;
                 border-radius: 15px;
+                width: 100%;
                 @include md {
                     height: 160px;
                     max-width: unset;
