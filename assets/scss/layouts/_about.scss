@@ -1,0 +1,20 @@
+/* About Us START*/
+
+.page-template-about-us {
+    .my__form {
+        .contactform {
+            margin-top: 0;
+            box-shadow: 0 0px 10px 1px #eee;
+            max-width: unset;
+        }
+        @media (min-width: 1200px) {
+            max-width: 1324px;
+            margin: auto;
+            margin-bottom: 40px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+}
+
+/* About Us END*/

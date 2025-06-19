@@ -1,0 +1,42 @@
+/* Contact Us START*/
+
+.page-template-contact {
+    .my__form {
+        padding-top: 80px;
+            @include md {
+                padding-top: 40px;
+            }
+        .contactform {
+            margin-top: 0;
+            box-shadow: 0 0px 10px 1px #eee;
+            max-width: unset;
+            @include min-sm {
+                flex-direction: row-reverse;
+            }
+        }
+        @media (min-width: 1200px) {
+            max-width: 1324px;
+            margin: auto;
+            margin-bottom: 40px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+    .my-form-rightside {
+        .quote-right-box {
+            @include min-sm {
+                border-radius: 23px 0 0px 23px!important;
+                .text-holder {
+                    border-radius: 0px 0 0px 23px!important;
+                }
+                .image-holder {
+                    img {
+                        border-radius: 23px 0 0px 23px!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Contact Us END*/
