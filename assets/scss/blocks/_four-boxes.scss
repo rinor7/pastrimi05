@@ -31,6 +31,15 @@
     }
     .ourServicesSwiper {
         padding: 0 16px;
+        .swiper-pagination {
+            position: relative;
+            margin-top: 24px;
+            .swiper-pagination-bullet {
+                &.swiper-pagination-bullet-active {
+                    background: $primary-color;
+                }
+            }
+        }
     }
     .box {
         z-index: 1;

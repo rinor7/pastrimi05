@@ -11,18 +11,21 @@
             color: $black;
         }
     }
-    .container {
-        @include md {
-            max-width: unset;
-            padding: 0;
-        }
-    }
     .row {
         row-gap: 40px;
     }
     .gallerySwiper {
         @include md {
             padding: 0 16px;
+        }
+        .swiper-pagination {
+            position: relative;
+            margin-top: 24px;
+            .swiper-pagination-bullet {
+                &.swiper-pagination-bullet-active {
+                    background: $primary-color;
+                }
+            }
         }
     }
     .box__wrapper {
@@ -60,5 +63,14 @@
         }
     }
 }
-
+.home {
+    .slider__boxes-section-plus {
+        .container {
+            @include md {
+                max-width: unset;
+                padding: 0;
+            }
+        }
+    }
+}
 /* Boxes with post type with no swiper style END */

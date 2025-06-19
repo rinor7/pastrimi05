@@ -28,8 +28,8 @@
         </div>
         <div class="static-elements-right">
             <div class="custom-arrows">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next banner-button-next"></div>
+                <div class="swiper-button-prev banner-button-prev"></div>
             </div>
             <div class="custom-call-action">
                 <div class="icon-holder">

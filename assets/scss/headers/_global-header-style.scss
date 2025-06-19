@@ -252,17 +252,28 @@ header {
  .right-widget {
     position: relative;
     // right: 0;
-    ul {
-        padding-right: 15px;
-        font-weight: 400;
-        color: $grey-color;
-        li {
-            i {
-                margin-right: 10px;
-            }
-        }
-        span {
-            display: block;
+    // ul {
+    //     padding-right: 15px;
+    //     font-weight: 400;
+    //     color: $grey-color;
+    //     li {
+    //         i {
+    //             margin-right: 10px;
+    //         }
+    //     }
+    //     span {
+    //         display: block;
+    //     }
+    // }
+    li {
+        height: 85px;
+        img {
+            height: 100%!important;
+            width: 100%;
+            -o-object-fit: contain;
+            object-fit: contain;
+            -o-object-position: right;
+            object-position: right;
         }
     }
 }

@@ -38,7 +38,7 @@ $video_title = $about_fields['video_title'] ?? '';
       <div class="right col-lg-6">
         <div class="line1">
           <img class="mobile-version" src="<?php echo esc_url($about_fields['box4img']); ?>" alt="" loading="lazy">
-          <span><?php echo wp_kses_post($about_fields['line1']); ?></span>
+          <h1><?php echo wp_kses_post($about_fields['line1']); ?></h1>
           </div>
         <div class="line2">
           <span><?php echo wp_kses_post($about_fields['line2']); ?></span>
@@ -77,7 +77,7 @@ $video_title = $about_fields['video_title'] ?? '';
       <div class="row">
         <div class="lefts col-lg-7">
           <div class="description">
-            <p><?php echo esc_html($about_fields['description']); ?></p>
+            <p><?php echo wp_kses_post($about_fields['description']); ?></p>
           </div>
         </div>
         <div class="rights col-lg-5">
@@ -114,7 +114,7 @@ $video_title = $about_fields['video_title'] ?? '';
         <div class="video-modal-overlay" onclick="closeVideoModal('about')"></div>
         <div class="video-modal-content">
           <span class="video-modal-close" onclick="closeVideoModal('about')">&times;</span>
-          <video controls autoplay id="modalVideo-about">
+          <video controls id="modalVideo-about">
             <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
             Your browser does not support the video tag.
           </video>

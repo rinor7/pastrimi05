@@ -40,7 +40,7 @@
                 <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
                 <div class="video-modal-content">
                     <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
-                    <video controls autoplay id="modalVideo">
+                    <video controls id="modalVideo">
                         <source src="<?php echo esc_url($video_file); ?>" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>

@@ -97,6 +97,7 @@
                     max-width: unset;
                     width: 100%;
                     border-radius: 0px 0px 15px 0px!important;
+                    padding: 12px 0 0 6px;
                 }
             }
         }
@@ -194,6 +195,7 @@
                 }
                 @include xs {
                     border-radius: 0px 0px 0 15px!important;
+                    padding: 12px 6px 0 0px;
                 }
             }
         }
@@ -204,6 +206,10 @@
             display: flex;
             align-items: center;
             margin-bottom: 25px;
+            @include sm {
+                align-items: flex-start;
+                margin-bottom: 16px;
+            }
             img{
                 width: 115px;
                 height: 70px;
@@ -212,15 +218,23 @@
                 @include lg {
                     margin-right: 5px;
                 }
+                // @include sm {
+                //     margin-right: auto;
+                // }
+                @include sm {
+                    width: 85px;
+                    margin-top: -5px;
+                }
             }
-            span{
+            h1{
                 color: #1a1e32;
                 margin: 0;
                 font-size: 30px;
                 line-height: 35px;
                 font-weight: 400;
                 @include sm {
-                    font-size: 24px;
+                    font-size: 22px;
+                    line-height: 30px;
                 }
             }
         }

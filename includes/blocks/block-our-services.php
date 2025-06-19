@@ -56,8 +56,7 @@ if (get_field('four_box-default_disable_section') || (!empty($four_box['disable_
                 </div>
                 <?php endfor; ?>
             </div>
-                <!-- <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div> -->
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
