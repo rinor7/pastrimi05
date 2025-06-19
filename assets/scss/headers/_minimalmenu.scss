@@ -64,5 +64,20 @@ header {
         }
     }
 }
-
+.body-on-scroll {
+    header {
+        .header-minimal {
+            .menu-here {
+                nav {
+                    #navbarNav { 
+                        @include md {
+                            top: 110px;
+                        }
+                    }
+        
+                }
+            }
+        }
+    }  
+}
 /* Header Default End*/
