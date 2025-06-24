@@ -75,6 +75,9 @@ $video_title = $about_fields['video_title'] ?? '';
 
     <?php if (!is_front_page()) : ?>
       <div class="row">
+      <div class="center col-lg-12">
+        <?php echo wp_kses_post($about_fields['center-col']); ?>
+      </div>
         <div class="lefts col-lg-7">
           <div class="description">
             <p><?php echo wp_kses_post($about_fields['description']); ?></p>

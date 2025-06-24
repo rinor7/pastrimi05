@@ -372,7 +372,13 @@
             margin-top: 30px;
         }
     }
-    .lefts {
+    .center {
+        margin-top: 25px;
+        @include min-md {
+            margin-top: 25px;
+        }
+    }
+    .lefts, .center {
         @include min-md {
             align-self: center;   
         }
