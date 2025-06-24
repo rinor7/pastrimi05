@@ -3,6 +3,18 @@
     @include min-md {
         padding: 80px 0;
     }
+    .section-header {
+        padding-bottom: 40px;
+        &-title {
+            color: $primary-color;
+            font-size: 35px;
+            line-height: 28px;
+            @include min-md {
+                font-size: 40px;
+                line-height: 32px;
+            }
+        }
+    }
     .row {
         @include xs {
             row-gap: 20px;
