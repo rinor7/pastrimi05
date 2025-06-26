@@ -164,6 +164,9 @@
             left: -70px;
             width: 180px;
             z-index: 4;
+            @include min-lg {
+                top: 50%;
+            }
             @include lg {
                 left: -40px;
             }
