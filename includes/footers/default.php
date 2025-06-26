@@ -39,7 +39,7 @@
     <div class="site-footer-copyrights">
         <div class="container">
             <div class="wrapper">
-            <p>&copy;<?php echo date(' Y  ') ;?>All rights Reserved. <a href="klikoje.com">klikoje.com</a></p>
+            <p>&copy;<?php echo date(' Y  ') ;?>All rights Reserved. <a href="https://klikoje.com/">klikoje.com</a></p>
             <ul><?php dynamic_sidebar('widget-3');?></ul>
             </div>
         </div>
