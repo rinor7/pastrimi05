@@ -120,3 +120,21 @@ if (function_exists('acf_add_options_page')) {
         'redirect'      => false
     ));
 }
+
+//Disable post type post:
+function remove_default_post_type_menu() {
+    remove_menu_page('edit.php'); // Removes "Posts" from admin menu
+}
+add_action('admin_menu', 'remove_default_post_type_menu');
+
+function modify_post_type_visibility() {
+    global $wp_post_types;
+    if (isset($wp_post_types['post'])) {
+        $wp_post_types['post']->public = false;
+        $wp_post_types['post']->show_ui = false;
+        $wp_post_types['post']->show_in_menu = false;
+        $wp_post_types['post']->exclude_from_search = true;
+        $wp_post_types['post']->show_in_rest = false;
+    }
+}
+add_action('init', 'modify_post_type_visibility', 100);
