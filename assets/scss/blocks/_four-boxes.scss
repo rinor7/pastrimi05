@@ -12,6 +12,12 @@
         background-size: contain;
         background-repeat: repeat;
     }
+    .section-header {
+        padding-bottom: 20px;
+        @include min-md {
+                padding-bottom: 40px;
+        }
+    }
     .container {
         padding: 60px 0;
         @include md {

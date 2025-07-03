@@ -265,6 +265,9 @@
                 padding-left: 20px;
                 li {
                     list-style-type: disc;
+                    strong {
+                        color: $black;
+                    }
                 }
             }
         }
@@ -403,6 +406,9 @@
             font-size: 16px;
             line-height: 30px;
             font-weight: 500;
+            strong {
+                color: $black;
+            }
         }
     }
     .rights {
