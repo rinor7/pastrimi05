@@ -13,7 +13,7 @@ if ($current_disable) {
 }
 
 $video_file = $about_fields['video_filee'] ?? null;
-// $video_url = is_array($video_file) ? ($video_file['url'] ?? '') : '';
+$video_url = is_array($video_file) ? ($video_file['url'] ?? '') : '';
 $video_uptitle = $about_fields['video_uptitle'] ?? '';
 $video_title = $about_fields['video_title'] ?? '';
 ?>
