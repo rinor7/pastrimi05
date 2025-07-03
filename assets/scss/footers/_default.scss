@@ -43,6 +43,9 @@ footer {
                 @include min-md {
                     padding-right: 20px;
                 }
+                strong {
+                    font-size: 26px;
+                }
             }
         }
         .footer-3 {
