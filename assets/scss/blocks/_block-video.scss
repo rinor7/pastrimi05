@@ -16,6 +16,16 @@
     @include md {
       height: 500px;
     }
+    .section-header-custom {
+      max-width: 900px;
+      margin: auto;
+      .section-header-custom-subtitle {
+        @include md {
+          font-size: 30px;
+          line-height: 40px;
+        }
+      }
+    }
     &.background-used {
       &:before {
         content: "";
