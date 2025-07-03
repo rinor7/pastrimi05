@@ -166,6 +166,7 @@ header {
          #primary, #footer-site {
             top: 120px;
             position: relative;
+            z-index: 0;
          }
      }
  }

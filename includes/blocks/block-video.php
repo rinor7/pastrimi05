@@ -3,7 +3,7 @@
 <?php 
     $video_block = get_field('block_video');
     $background = $video_block['background_image'] ?? '';
-    $video_file = $video_block['video_file'] ?? '';
+    $video_file = $video_block['video_filee'] ?? '';
 	$video_uptitle = $video_block['video_uptitle'] ?? '';
     $video_title = $video_block['video_title'] ?? '';
 
