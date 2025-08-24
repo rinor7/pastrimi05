@@ -281,7 +281,7 @@
                 {
                     "key": "field_684eebc9d832a",
                     "label": "Video",
-                    "name": "video_file",
+                    "name": "video_filee",
                     "aria-label": "",
                     "type": "file",
                     "instructions": "",
@@ -292,7 +292,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "url",
                     "library": "all",
                     "min_size": "",
                     "max_size": "",
@@ -574,5 +574,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750757580
+    "modified": 1756075440
 }

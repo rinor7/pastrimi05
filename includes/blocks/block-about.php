@@ -12,8 +12,7 @@ if ($current_disable) {
     return; // mos shfaq section-in nëse e ka disable faqja aktuale
 }
 
-$video_file = $about_fields['video_filee'] ?? null;
-$video_url = is_array($video_file) ? ($video_file['url'] ?? '') : '';
+$video_url = $about_fields['video_filee'] ?? '';
 $video_uptitle = $about_fields['video_uptitle'] ?? '';
 $video_title = $about_fields['video_title'] ?? '';
 ?>
@@ -39,7 +38,7 @@ $video_title = $about_fields['video_title'] ?? '';
         <div class="line1">
           <img class="mobile-version" src="<?php echo esc_url($about_fields['box4img']); ?>" alt="" loading="lazy">
           <h1><?php echo wp_kses_post($about_fields['line1']); ?></h1>
-          </div>
+        </div>
         <div class="line2">
           <span><?php echo wp_kses_post($about_fields['line2']); ?></span>
         </div>
@@ -50,17 +49,11 @@ $video_title = $about_fields['video_title'] ?? '';
               <div class="icon-holder">
                 <div class="icon">
                   <div class="inner">
-                  <?php if ($video_url): ?>
-                    <div class="icon-holder">
-                      <div class="icon">
-                        <div class="inner">
-                          <div class="html5lightbox" onclick="openVideoModal()" style="cursor:pointer;" title="Fouens Video Gallery">
-                            <span><i class="fas fa-play"></i></span>
-                          </div>
-                        </div>
+                    <?php if ($video_url): ?>
+                      <div class="html5lightbox" id="about-play" style="cursor:pointer;" title="About Video">
+                        <span><i class="fas fa-play"></i></span>
                       </div>
-                    </div>
-                  <?php endif; ?>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -75,9 +68,9 @@ $video_title = $about_fields['video_title'] ?? '';
 
     <?php if (!is_front_page()) : ?>
       <div class="row">
-      <div class="center col-lg-12">
-        <?php echo wp_kses_post($about_fields['center-col']); ?>
-      </div>
+        <div class="center col-lg-12">
+          <?php echo wp_kses_post($about_fields['center-col']); ?>
+        </div>
         <div class="lefts col-lg-7">
           <div class="description">
             <p><?php echo wp_kses_post($about_fields['description']); ?></p>
@@ -112,11 +105,11 @@ $video_title = $about_fields['video_title'] ?? '';
     <?php endif; ?>
 
     <?php if ($video_url): ?>
-      <!-- Video Modal -->
-      <div id="videoModal-about" class="video-modal" style="display:none;">
-        <div class="video-modal-overlay" onclick="closeVideoModal('about')"></div>
+      <!-- About Video Modal -->
+      <div id="videoModal-about" class="video-modal">
+        <div class="video-modal-overlay" onclick="closeVideoModalAbout()"></div>
         <div class="video-modal-content">
-          <span class="video-modal-close" onclick="closeVideoModal('about')">&times;</span>
+          <span class="video-modal-close" onclick="closeVideoModalAbout()">&times;</span>
           <video controls id="modalVideo-about">
             <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
             Your browser does not support the video tag.
@@ -131,7 +124,6 @@ $video_title = $about_fields['video_title'] ?? '';
           </div>
         </div>
       </div>
-
     <?php endif; ?>
     
   </div>

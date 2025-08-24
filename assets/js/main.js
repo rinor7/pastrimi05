@@ -262,7 +262,7 @@ breakpoints: {
 });
 
 
-//Video Modal
+//Video Modal Home Section
 function openVideoModal() {
 const modal = document.getElementById('videoModal');
 const video = document.getElementById('modalVideo');
@@ -279,3 +279,21 @@ modal.classList.remove('active');
 }
 
 document.querySelector('.play-icon')?.addEventListener('click', openVideoModal);
+
+//Video Modal About Us section/page
+ function openVideoModalAbout() {
+    const modal = document.getElementById('videoModal-about');
+    const video = document.getElementById('modalVideo-about');
+    modal.classList.add('active');
+    video.currentTime = 0;
+    video.play();
+}
+
+function closeVideoModalAbout() {
+    const modal = document.getElementById('videoModal-about');
+    const video = document.getElementById('modalVideo-about');
+    video.pause();
+    modal.classList.remove('active');
+}
+
+document.getElementById('about-play')?.addEventListener('click', openVideoModalAbout);
